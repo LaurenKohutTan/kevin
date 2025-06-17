@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+</head>
+<body>
+  <!-- Showing the scores of each player/progress bars -->
+  <div class="progress-wrapper">
+    <div class="player-bars" id="player1-bars"></div>
+    <div class="divider">│</div>
+    <div class="player-bars" id="player2-bars"></div>
+  </div>
+
+  <!-- Showing number of available problems left from the database -->
+  <div class="status-bar">
+    Available Problems Left: <span id="problems-left"></span>
+  </div>
+
+  <!-- Question container -->
+  <div class="question-container">
+    <h3 id="questionSubject">Subject</h3>
+    <h2 id="questionText">Loading question...</h2>
+    <div class="answer-box" id="choicesBox"></div>
+    <p id="resultText"></p>
+  </div>
+
+  <!-- End game message, including a play again button -->
+  <div id="endGameMessage" style="display: none; text-align: center; margin-top: 30px;">
+    <h2 id="winnerText"></h2>
+    <div class="button-wrapper">
+      <button onclick="window.location.href = 'finalproject.html'">Play Again</button>
+    </div>
+  </div>
+  
+  <script src="game.js"></script>
+</body>
+</html>
