@@ -1,0 +1,366 @@
+/* General Page Layout */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #d1ddff;
+  padding: 50px;
+}
+
+/* Dropdown Container Layout */
+.dropdown-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Dropdown Structure */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 225px;
+}
+
+
+/* Dropdown Button (Visible Box) */
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border: 2px solid #a78bfa;
+  border-radius: 9999px;
+  background-color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  min-height: 42px;
+}
+
+/* Dropdown Button Text and Arrow */
+.dropdown-button .label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdown-button .text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+  margin-left: 12px;
+}
+
+.dropdown-button .arrow {
+  font-size: 20px;
+  color: #a78bfa;
+  margin-left: 6px;
+}
+
+/* Dropdown Options Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  z-index: 1;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Show class to display the dropdown */
+.show {
+  display: block;
+}
+
+/* Dropdown Options Menu Labels */
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  cursor: pointer;
+}
+
+.dropdown-content label:hover {
+  background-color: #f1f1f1;
+}
+
+/* Checkbox Formatting */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  border: 2px solid #a78bfa;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Checkbox Checked State */
+input[type="checkbox"]:checked {
+  background-color: #a78bfa;
+  border-color: #a78bfa;
+}
+
+/* Checkmark Formatting */
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-55%, -60%) rotate(45deg);
+}
+
+
+/* Radio Button Formatting */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  border: 2px solid #a78bfa;
+  border-radius: 7.5px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Radio Button Checked State */
+input[type="radio"]:checked {
+  background-color: #a78bfa;
+  border-color: #a78bfa;
+}
+
+/* Wrapper for player name input boxes to be in the same line */
+.player-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Player names input box formatting */
+.player-input {
+  font-family: inherit;
+  font-size: 16px;
+  border: 2px solid #a78bfa;
+  padding: 10px 14px;
+  width: 200px;
+  box-sizing: border-box;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.player-input:focus {
+  border-color: #7c5ce0;
+}
+
+/* Entire wrapper for progress bars of both players */
+.progress-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Each player’s progress bar group */
+.player-bars {
+  display: flex;
+  gap: 10px;
+}
+
+/* Divider between player 1 and player 2 */
+.divider {
+  font-size: 24px;
+  font-weight: bold;
+  color: #7c5ce0;
+  padding: 0 10px;
+}
+
+/* Individual progress bar */
+.progress-bar {
+  width: 80px;
+  height: 26px;
+  border: 2px solid #7c5ce0;
+  background-color: rgb(255, 255, 255, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Filled portion inside progress bar */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #a78bfa;
+  transition: width 0.3s ease-in-out;
+  border-radius: 15px;
+}
+
+/* Button styling */
+button {
+  font-family: inherit;
+  font-size: 18px;
+  padding: 12px 28px;
+  background: linear-gradient(to right, #7c5ce0, #a78bfa);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Container for number of questions left display */
+.status-bar {
+  text-align: center;
+  font-size: 18px;
+  color: #7c5ce0;
+  margin-top: 24px;
+  margin-bottom: 18px
+}
+
+/* Container for subject, question, and choices */
+.question-container {
+  background-color: rgb(0, 0, 0, 0.06);
+  border: 2px solid #a78bfa;
+  border-radius: 20px;
+  padding: 6px;
+  max-width: 900px;
+  margin: 20px auto 30px auto;
+  text-align: center;
+}
+
+/* Subject heading */
+#questionSubject {
+  font-size: 20px;
+  color: #7c5ce0;
+  margin-bottom: 16px;
+}
+
+/* Answer box container */
+.answer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+/* Answer choice styling */
+.answer-choice {
+  width: 300px;
+  padding: 12px 20px;
+  border: 2px solid #a78bfa;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255, 0.5);
+  color: #7c5ce0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect color for answer choices */
+.answer-choice:hover {
+  background-color: #f0eaff;
+}
+
+/* Correct answer selected styling */
+.answer-choice.correct {
+  background-color: #7c5ce0;
+  color: white;
+  border-color: #7c5ce0;
+}
+
+/* Incorrect answer selected styling */
+.answer-choice.incorrect {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Incorrent answer shaking */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+/* Key hint formatting */
+.key-hint {
+  float: right;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Centering incorrect answer message */
+#resultText {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 15px;
+}
